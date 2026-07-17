@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    uses: konkele-homelab/ci-platform/.github/workflows/build-oci-container.yaml@main
+    uses: konkele-homelab/ci-platform/.github/workflows/build-container.yaml@v1
 
     secrets:
       CI_REGISTRY_USERNAME: ${{ secrets.CI_REGISTRY_USERNAME }}
