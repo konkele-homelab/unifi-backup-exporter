@@ -9,11 +9,13 @@ on:
 
 jobs:
   build:
-    uses: konkele-homelab/ci-platform/.github/workflows/build-container.yaml@v1
+    name: Build Container Image
 
-    secrets:
-      CI_REGISTRY_USERNAME: ${{ secrets.CI_REGISTRY_USERNAME }}
-      CI_REGISTRY_PASSWORD: ${{ secrets.CI_REGISTRY_PASSWORD }}
+    permissions:
+      contents: read
+      id-token: write
+
+    uses: konkele-homelab/ci-platform/.github/workflows/build-container.yaml@v2
 
     with:
       image_name: unifi-backup-exporter
